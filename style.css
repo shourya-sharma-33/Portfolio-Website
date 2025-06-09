@@ -1,0 +1,174 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+body {
+      background-color: #ff8fb1;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+}
+.section {
+      min-height: 40vh;
+      padding: 5vh 10vw;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+}
+.section-skills {
+      min-height: 70vh;
+      padding: 5vh 10vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+}
+    
+.name {
+      display: inline-block;     /* Shrink to fit content */
+      max-width: 100%;           /* Don't overflow parent container */
+      padding: 1rem; 
+      font-family: 'Great Vibes', cursive;
+      font-size: 10rem;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      margin-top: 10vh;
+}
+.name span {
+      margin: 0 10px;
+}
+.skills {
+      position: absolute;
+      top: 40%;
+      right: 10%;
+      text-align: right;
+      font-size: 1.5rem;
+      font-weight: bold;
+}
+    .skills div {
+      color: rgba(51, 0, 51, 0.2);
+      transition: all 1s ease-in-out;
+}
+.skills div.active {
+      color: #2e003e;
+      opacity: 1;
+}
+.circle {
+      position: fixed;
+      border-radius: 50%;
+      background-color: #c77dff;
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: -1;
+}
+.circle1 { width: 300px; height: 300px; top: -100px; left: -100px; }
+.circle2 { width: 100px; height: 100px; top: 15%; left: 80%; }
+.circle3 { width: 100px; height: 100px; bottom: 15%; left: 10%; }
+.circle4 { width: 300px; height: 300px; bottom: -100px; right: -100px; }
+
+.fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+}
+
+.dev-section {
+      max-width: 700px;
+      color: white;
+      text-align: center;
+      margin: 60px auto;
+      font-family: serif;
+}
+.dev-section h2 {
+      font-size: 2.5rem;
+      font-family: 'Great Vibes', cursive;
+      font-weight: bold;
+}
+.dev-section h2:hover{
+      transform: scale(1.1);
+      transition-duration: 0.1s;
+      color: #7a3fa1;
+}
+.dev-section p {
+      font-size: 1.1rem;
+      margin: 5px 0 5px;
+}
+
+.dev-section a {
+      color: #57068c;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: x-small;
+}
+
+.dev-section a :hover{
+      color: #c77dff;
+}
+
+.footer-section h3{
+    font-family: 'Great Vibes', cursive;
+}
+.line {
+      position: absolute;
+      left: 5%;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background-color: white;
+}
+footer.footer {
+    background-color: #a03aff;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 70px 10vw;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+    font-size: x-small;}
+
+.footer-section {
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.footer-section p{
+  font-family: serif;
+}
+
+.footer-section .social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-section img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Ensure footer never overlaps skill content */
+.section:last-of-type {
+  padding-bottom: 200px;
+}
+
+.name-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
