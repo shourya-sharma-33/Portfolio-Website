@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shourya Sharma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+
+</head>
+<body>
+  <!-- Dynamic Background Circles -->
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+  <div class="circle circle3"></div>
+  <div class="circle circle4"></div>
+
+  <!-- HOME SECTION -->
+    <div class="name-flex">
+      <div class="name">
+      <span>Shourya</span><span>Sharma</span>
+      </div>
+    </div>
+  <div class="section-skills">
+    <div class="skills">
+      <div class="active">WEB DEVELOPMENT</div>
+      <div>ARTIFICIAL INTELLIGENCE</div>
+      <div>MACHINE & DEEP LEARNING</div>
+      <div>DATA ANALYSIS</div>
+      <div>NATURAL LANGUAGE PROCESSING</div>
+      <div>WEB DESIGNER</div>
+    </div>
+  </div>
+
+  <!-- DEVELOPMENT SECTION -->
+  <div class="section">
+    <div class="line"></div>
+    <div class="dev-section fade-in">
+      <h2>Full Stack Development</h2>
+      <p>I build dynamic and responsive web applications using modern frontend and backend technologies. Comfortable across the entire tech stack, from crafting interactive user interfaces to designing robust APIs and databases.</p>
+      <a href="https://github.com/yourusername/fullstack-projects" target="_blank">View My Work on Full Stack Projects on GitHub</a>
+    </div>
+    <div class="dev-section fade-in">
+      <h2>Front End Development</h2>
+      <p>I create beautiful, user-friendly websites with modern design principles and clean UI/UX. Passionate about crafting pixel-perfect interfaces that are both functional and visually engaging.</p>
+      <a href="https://github.com/yourusername/frontend-projects" target="_blank">View My Work on Front End Projects on GitHub</a>
+    </div>
+    <!-- More sections like ML, DL, etc. can be added below in same format -->
+  </div>
+  <!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-section">
+    <h3>My Socials</h3>
+    <div class="social">
+      <a href="placeholder-twitter"><img src="placeholder-twitter" alt="Twitter" /></a>
+      <span>PLACEHOLDER.PLACEHOLDER</span>
+    </div>
+    <div class="social">
+      <a href="placeholder-github"><img src="placeholder-github" alt="GitHub" /></a>
+      <span>PLACEHOLDER.PLACEHOLDER</span>
+    </div>
+  </div>
+  <div class="footer-section">
+    <h3>Contact Me</h3>
+    <p>PLACEHOLDER.PLACEHOLDER</p>
+    <p>PLACEHOLDER.PLACEHOLDER</p>
+  </div>
+</footer>
+
+  <script>
+    // Parallax effect for circles
+    const circles = document.querySelectorAll('.circle');
+    document.addEventListener('mousemove', e => {
+      circles.forEach((circle, index) => {
+        const factor = (index + 1) * 0.02;
+        const x = e.clientX * factor;
+        const y = e.clientY * factor;
+        circle.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
+
+    // Skills rotation
+    const skills = document.querySelectorAll('.skills div');
+    let current = 0;
+    setInterval(() => {
+      skills.forEach(skill => skill.classList.remove('active'));
+      current = (current + 1) % skills.length;
+      skills[current].classList.add('active');
+    }, 5000);
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
